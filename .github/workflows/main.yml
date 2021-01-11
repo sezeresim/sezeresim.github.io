@@ -21,8 +21,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      
-
+       
+       
     - name: Installing my packages
       run: npm ci
 
@@ -37,6 +37,8 @@ jobs:
     
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.5.9
+      env:
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.

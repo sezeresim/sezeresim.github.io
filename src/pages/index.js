@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sezer Esim | Software Engineer</title>
+        <title>Sezer Esim | Software Engineer </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="5xl" mt="10">
         <Stack spacing={3}>
           <Text fontSize="2xl" isTruncated>
-            Hi,I am Sezer
+            Hi,I am Sezer :)
           </Text>
           <Text>I am a software engineer.</Text>
         </Stack>

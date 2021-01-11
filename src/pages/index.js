@@ -30,12 +30,11 @@ export default function Home() {
             blogPosts.map((post) => (
               <Link href={post.link} target="_blank" mb="10px">
                 <Box maxWidth="sm" borderRadius={5} overflow="hidden" borderWidth="1px">
-                  <Image src={post.thumbnail} alt={post.title} height="200px" width="100%" />
                   <Box m="3">
                     <Badge borderRadius="full" px="2" colorScheme="teal">
                       Date
                     </Badge>
-                    <Box
+                    <Text
                       color="gray.500"
                       fontWeight="semibold"
                       letterSpacing="wide"
@@ -44,7 +43,7 @@ export default function Home() {
                       ml="2"
                     >
                       {post.pubDate}
-                    </Box>
+                    </Text>
                   </Box>
                   <Box m="3">{post.title}</Box>
                   <Box m="3">

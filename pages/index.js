@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Container, Text, Image, Link, Badge, Wrap } from '@chakra-ui/react';
+import { Box, Container, Text, Image, Link, Badge, Wrap, Avatar, Stack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 export default function Home() {
@@ -14,13 +14,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sezer Esim</title>
+        <title>Sezer Esim | Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container>
-        <Text mt="10" fontSize="3xl">
-          Hi,I am Sezer
-        </Text>
+      <Container maxW="5xl" mt="10">
+        <Stack spacing={3}>
+          <Text fontSize="2xl" isTruncated>
+            Hi,I am Sezer
+          </Text>
+          <Text>I am a software engineer.</Text>
+        </Stack>
 
         <Wrap mt="10">
           {blogPosts &&

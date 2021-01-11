@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import theme from '../../theme';
+import theme from '../theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import Header from '../components/header';
 

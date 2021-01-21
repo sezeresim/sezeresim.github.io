@@ -2,16 +2,16 @@ import Head from 'next/head';
 import { Box, Container, Text, Image, Link, Badge, Wrap, Avatar, Stack, Divider } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 
-const getRandomColor = () => {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
-
 export default function Home() {
+  const getRandomColor = () => {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
   return (
     <>
       <Head>
@@ -31,14 +31,14 @@ export default function Home() {
           Tech Stack
         </Text>
         {[
-          { name: 'Javascript', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'Node.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'AWS', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'React.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'Next.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'Serverless', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'React Native', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
-          { name: 'NoSQL', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'Javascript', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'Node.js', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'AWS', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'React.js', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'Next.js', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'Serverless', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'React Native', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
+          { name: 'NoSQL', icon: <CheckCircleIcon mr="2" color={getRandomColor} /> },
         ].map((item) => (
           <Text display="inline-flex" alignItems="center" mr="5" mb="5" color={getRandomColor()}>
             {item.icon} {item.name}

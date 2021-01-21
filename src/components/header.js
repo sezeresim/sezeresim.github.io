@@ -38,7 +38,7 @@ function Header() {
             {MENU.map((item) => {
               return (
                 <NextLink href={item.url}>
-                  <Link px={3} py={2} w="full" _hover={{ textDecoration: 'none' }}>
+                  <Link mr={3} py={2} w="full" _hover={{ textDecoration: 'none' }}>
                     {item.name}
                   </Link>
                 </NextLink>

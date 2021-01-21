@@ -1,62 +1,49 @@
 import Head from 'next/head';
-import { Box, Container, Text, Image, Link, Badge, Wrap, Avatar, Stack } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-export default function Home() {
-  const [blogPosts, setBlogPosts] = useState(null);
-  useEffect(() => {
-    axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sezeresim').then((res) => {
-      console.log(res.data);
-      setBlogPosts(res.data.items);
-    });
-  }, []);
+import { Box, Container, Text, Image, Link, Badge, Wrap, Avatar, Stack, Divider } from '@chakra-ui/react';
+import { CheckCircleIcon } from '@chakra-ui/icons';
 
+const getRandomColor = () => {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+export default function Home() {
   return (
     <>
       <Head>
-        <title>Sezer Esim | Software Engineer </title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Sezer Esim</title>
+        <link rel="icon" href={'/favicon.ico'} />
       </Head>
-      <Container maxW="5xl" mt="10">
+      <Container maxW="4xl">
         <Stack spacing={3}>
-          <Text fontSize="2xl" isTruncated>
-            Hi,I am Sezer :)
+          <Text fontSize="2xl" isTruncated color="rebeccapurple">
+            Hi,I am Sezer,
           </Text>
           <Text>I am a software engineer.</Text>
         </Stack>
+        <Divider my="5" />
 
-        <Wrap mt="10">
-          {blogPosts &&
-            blogPosts.map((post) => (
-              <Link href={post.link} target="_blank" mb="10px">
-                <Box maxWidth="sm" borderRadius={5} overflow="hidden" borderWidth="1px">
-                  <Box m="3">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                      Date
-                    </Badge>
-                    <Text
-                      color="gray.500"
-                      fontWeight="semibold"
-                      letterSpacing="wide"
-                      fontSize="xs"
-                      textTransform="uppercase"
-                      ml="2"
-                    >
-                      {post.pubDate}
-                    </Text>
-                  </Box>
-                  <Box m="3">{post.title}</Box>
-                  <Box m="3">
-                    {post.categories.map((category) => (
-                      <Badge borderRadius="full" px="2" colorScheme="blue" mr="3">
-                        {category}
-                      </Badge>
-                    ))}
-                  </Box>
-                </Box>
-              </Link>
-            ))}
-        </Wrap>
+        <Text fontSize="2xl" isTruncated color="skyblue" mb="5">
+          Tech Stack
+        </Text>
+        {[
+          { name: 'Javascript', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'Node.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'AWS', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'React.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'Next.js', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'Serverless', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'React Native', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+          { name: 'NoSQL', icon: <CheckCircleIcon mr="2" color={getRandomColor()} /> },
+        ].map((item) => (
+          <Text display="inline-flex" alignItems="center" mr="5" mb="5" color={getRandomColor()}>
+            {item.icon} {item.name}
+          </Text>
+        ))}
       </Container>
     </>
   );

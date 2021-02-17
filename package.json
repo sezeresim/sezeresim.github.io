@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "static": "next build && next export",
-    "export":"next export"
+    "export": "next export",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "prettier": "./node_modules/.bin/prettier --write './src/**/*.js'",
+    "icon": "svgr  src/assets/Icons -d src/components/Icons --ignore-existing --icon --replace-attr-values \"#fff=currentColor\""
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.2",
@@ -19,5 +22,9 @@
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.5.0",
+    "prettier": "^2.2.1"
   }
 }
